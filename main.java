@@ -8,10 +8,10 @@ public class main {
             Electronics e = new Electronics("Television", 20000.0,"Samaung","Neo QLED");
             Book b = new Book("OOP Programming", 250.0, "John Doe", 300);
             Smartphone s = new Smartphone("Iphone", 4000.0, "Apple", "Iphone99", "ios");
-            n.display();
-            e.display();
-            b.display();
-            s.display();
+            n.get();
+            e.get();
+            b.get();
+            s.get();
     }
 }
 
@@ -25,22 +25,17 @@ class Product{
         this.price = price;
     }
 
-    public String getname(){
+    
+    public String setname(String Name){
         return Name;
-        
-    }
-    public void setname(String Name){
-        this.Name = Name;
     }
 
-    public double price(){
+   
+    public double setprice(double price){
         return price ; 
     }
-    public void setprice(double price){
-        this.price = price;
-    }
 
-    public void display(){
+    public void get(){
         System.out.println("Product Name : "+this.Name);
         System.out.println("Product Price : "+this.price);
         System.out.println("*************************************");
@@ -48,7 +43,7 @@ class Product{
 }
 
 class Electronics extends Product{
-    protected String brand= "sumsung";
+    protected String brand;
     protected String model;
 
 Electronics(String Name, double price ,String brand, String model){
@@ -56,21 +51,17 @@ Electronics(String Name, double price ,String brand, String model){
     this.brand = brand;
     this.model = model;    
 }
-    
-        public String getBrand(){
-            return brand;
+
+       
+        public String setBrand(String brand){
+           return brand;
         }
-        public void setBrand(){
-            this.brand =brand;
-        }
-        public String getModel(){
+        public String setModel(String model){
             return model;
         }
-        public void setModel(){
-            this.model = model;
-        }
+       
 
-        public void display(){
+        public void get(){
         System.out.println("Product Name : "+this.Name);
         System.out.println("Product Price : "+this.price);
          System.out.println("Brand : "+this.brand);
@@ -88,20 +79,17 @@ class Book extends Product{
     this.pages = pages;    
 }
     
-        public String getauthor(){
+        public String setauthor(String author){
             return author;
         }
-        public void setauthor(){
-            this.author = author;
-        }
-        public int getpages(){
+      
+        
+        public int setpages(int pages){
             return pages;
         }
-        public void setpages(){
-            this.pages = pages;
-        }
+       
 
-        public void display(){
+        public void get(){
         System.out.println("Product Name : "+this.Name);
         System.out.println("Product Price : "+this.price);
          System.out.println("Author : "+this.author);
@@ -120,17 +108,15 @@ class Smartphone extends Electronics{
     super(Name, price,brand,model);
         this.operatingSystem = operatingSystem;
     }
-public String getoperatingSystem(){
+public String setoperatingSystem(String operatingSystem){
     return operatingSystem;
    
 }
-public void setoperatingSystem(){
-     this.operatingSystem = operatingSystem;
-}
 
 
 
-public void display(){
+
+public void get(){
         System.out.println("Product Name : "+this.Name);
         System.out.println("Product Price : "+this.price);
         System.out.println("Brand : "+this.brand);
